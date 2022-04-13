@@ -1,0 +1,7 @@
+.home__container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  .section__wrapper {
+    scroll-snap-align: start;
+  }
+}

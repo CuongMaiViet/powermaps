@@ -1,0 +1,12 @@
+.chatbox {
+  max-height: calc(100% - 30px) !important;
+  width: 400px;
+  height: 600px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+}

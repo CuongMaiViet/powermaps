@@ -1,0 +1,36 @@
+.pages__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  div[class*='__container'] {
+    width: 100%;
+    height: 100vh;
+
+    .section__wrapper {
+      width: 100%;
+      height: 100%;
+      perspective: 20rem;
+      margin-bottom: 3rem;
+
+      section[class*='__section'] {
+        width: 100%;
+        height: 100%;
+        background-color: #222;
+        position: relative;
+        left: 0;
+
+        transform-origin: left;
+        box-shadow: rgba($color: #000000, $alpha: 0.2) 0 60px 40px -7px;
+        // -webkit-box-reflect: below 1px linear-gradient(transparent 50%, #0002);
+        // padding: 5rem 0;
+        transition: left 0.5s, transform 0.5s, margin-bottom 0.5s;
+        will-change: auto;
+        &.active {
+          left: 15vw;
+          transform: rotateY(10deg);
+        }
+      }
+    }
+  }
+}

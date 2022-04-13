@@ -1,0 +1,44 @@
+.header {
+  .nav__content {
+    background-color: #181818;
+    height: 100vh;
+    position: fixed;
+    width: $width-nav;
+    top: 0;
+    left: -$width-nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    z-index: $z-index-high;
+    transition: left 0.5s;
+    box-shadow: rgba($color: #000000, $alpha: 0.2) 0px 60px 40px -7px;
+    will-change: left;
+    &.active {
+      left: 0;
+    }
+
+    .nav__menu {
+      cursor: pointer;
+      color: white;
+      z-index: $z-index-priority;
+      position: fixed;
+      width: 1.5rem;
+      height: 1.5rem;
+      top: 0.5rem;
+      left: 0.5rem;
+      transition: 0.5s;
+    }
+    &.active .nav__menu {
+      left: $width-nav + 0.5;
+    }
+
+    .nav__link {
+      text-transform: capitalize;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: white;
+    }
+  }
+}
