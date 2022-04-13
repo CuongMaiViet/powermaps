@@ -1,24 +1,38 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => {
+  const [menu, setMenu] = useState(false)
+
   const navRef = useRef()
-  const navToggle = () => {
-    navRef.current.classList.toggle('active')
+
+  const navToggle = (ef) => {
+    navRef.current.classList[ef]('active')
     document.querySelectorAll('section[class*=__section]').forEach((el) => {
-      el.classList.toggle('active')
+      el.classList[ef]('active')
+      setMenu(!menu)
     })
   }
+
+  document.onclick = (e) => {
+    if (
+      e.target.classList.contains('nav__link')
+      // !e.target.classList.contains('nav__content')
+    ) {
+      navToggle('remove')
+    }
+  }
+
   return (
     <header className="header">
       <nav className="nav__content" ref={navRef}>
         <FontAwesomeIcon
           className="nav__menu"
-          icon={faBars}
+          icon={menu ? faClose : faBars}
           color="#000"
-          onClick={navToggle}
+          onClick={() => navToggle('toggle')}
         />
 
         <NavLink

@@ -10,7 +10,9 @@ const Home = () => {
         </section>
       </div>
       <div className="section__wrapper">
-        <section className="home__section">hello</section>
+        <section className="home__section">
+          <Chat />
+        </section>
       </div>
     </div>
   )

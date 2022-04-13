@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import 'animate.css'
 import './App.scss'
 import Home from './components/Home'
 import Layouts from './components/Layouts'

@@ -5,8 +5,43 @@ $z-index-high: 2;
 $z-index-modal: 3;
 $z-index-priority: 4;
 
-$width-nav: 15vw;
+// $width-nav: 70vw;
+
+$transition-default: 0.5s;
+
+$breakpoints: (
+  360px: 90vw,
+  768px: 70vw,
+  1366px: 50vw,
+  1920px: 30vw,
+) !default;
+
+:root {
+  --width-nav: 80vw;
+}
 
 @import './components/Layouts/index.scss';
 @import './components/Navigation/index.scss';
 @import './components/Home/index.scss';
+@import './components/Chat/index.scss';
+
+@media screen and (min-width: 360px) {
+  :root {
+    --width-nav: 50vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --width-nav: 35vw;
+  }
+}
+@media screen and (min-width: 1366px) {
+  :root {
+    --width-nav: 30vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  :root {
+    --width-nav: 20vw;
+  }
+}
