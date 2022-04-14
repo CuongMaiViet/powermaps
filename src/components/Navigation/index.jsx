@@ -17,12 +17,8 @@ const Navigation = () => {
   }
 
   document.onclick = (e) => {
-    if (
-      e.target.classList.contains('nav__link')
-      // !e.target.classList.contains('nav__content')
-    ) {
-      navToggle('remove')
-    }
+    e.target.classList.contains('nav__link') && navToggle('remove')
+    // !e.target.classList.contains('nav__menu') && navToggle('remove')
   }
 
   return (
