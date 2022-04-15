@@ -3,7 +3,7 @@ import './index.scss'
 import 'splitting/dist/splitting.css'
 import 'splitting/dist/splitting-cells.css'
 import Splitting from 'splitting'
-import logo from '../../assets/images/banner.png'
+import resources from '../../utils/resources'
 
 const Banner = () => {
   const bannerRef = useRef()
@@ -38,7 +38,7 @@ const Banner = () => {
       {!sessionStorage.getItem('banner') && (
         <section className="banner" ref={bannerRef}>
           <div className="image">
-            <img src={logo} />
+            <img src={resources.banner} />
           </div>
         </section>
       )}

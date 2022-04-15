@@ -4,7 +4,7 @@ const Chat = () => {
   const chatRef = useRef()
   const iconRef = useRef()
 
-  const toggleChat = (e) => {
+  const toggleChat = () => {
     chatRef.current.classList.toggle('active')
     iconRef.current.classList.toggle('active')
   }
