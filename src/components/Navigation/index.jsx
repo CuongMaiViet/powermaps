@@ -1,7 +1,5 @@
 import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => {
   const [menu, setMenu] = useState(false)
@@ -24,12 +22,11 @@ const Navigation = () => {
   return (
     <header className="header">
       <nav className="nav__content" ref={navRef}>
-        <FontAwesomeIcon
-          className="nav__menu"
-          icon={menu ? faClose : faBars}
-          color="#000"
-          onClick={() => navToggle('toggle')}
-        />
+        <div className="nav__menu" onClick={() => navToggle('toggle')}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
         <NavLink
           exact="true"
