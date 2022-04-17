@@ -4,54 +4,44 @@
     height: 100%;
     position: relative;
 
-    div[class*='__container'] {
-      width: 100%;
-      height: 100vh;
+    // div[class*='__container'] {
+    //   width: 100%;
+    //   height: 100vh;
 
-      .section__wrapper {
-        width: 100%;
-        height: 100%;
-        perspective: 20rem;
-        margin-bottom: 1rem;
+    //   .section__wrapper {
+    //     width: 100%;
+    //     height: 100%;
+    //     perspective: 20rem;
+    //     // margin-bottom: 3rem;
 
-        section[class*='__section'] {
-          width: 100%;
-          height: 100%;
-          background-color: #222;
-          position: relative;
-          left: 0;
-          transform-origin: left;
-          box-shadow: rgba($color: #000000, $alpha: 0.2) 0 60px 40px -7px;
-          // -webkit-box-reflect: below 1px linear-gradient(transparent 50%, #0002);
-          // padding: 5rem 0;
-          transition: left $transition-default, transform $transition-default,
-            margin-bottom $transition-default;
-          will-change: auto;
+    //     section[class*='__section'] {
+    //       width: 100%;
+    //       height: 100%;
+    //       background-color: #e5e5e5;
+    //       position: relative;
+    //       left: 0;
+    //       transform-origin: left;
+    //       box-shadow: rgba($color: #000000, $alpha: 0.2) 0 60px 40px -7px;
+    //       // -webkit-box-reflect: below 1px linear-gradient(transparent 50%, #0002);
+    //       // padding: 5rem 0;
+    //       transition: left $transition-default, transform $transition-default,
+    //         margin-bottom $transition-default;
+    //       will-change: auto;
 
-          // &::before {
-          //   content: '';
-          //   width: 0;
-          //   height: 0;
-          //   border-left: 0px solid transparent;
-          //   border-right: 500px solid transparent;
-          //   border-top: 300px solid white;
-          //   position: absolute;
-          //   top: 0;
-          //   left: 0;
-          //   opacity: 0;
-          //   transition: 0.1s;
-          // }
+    //       &.active {
+    //         left: var(--width-nav);
+    //         transform: rotateY(10deg);
+    //         // transform: skew(-20deg);
+    //       }
+    //     }
 
-          &.active {
-            left: var(--width-nav);
-            transform: rotateY(10deg);
-            // transform: skew(-20deg);
-            &::before {
-              opacity: 1;
-            }
-          }
-        }
-      }
-    }
+    //     div[class*='__content'] {
+    //       // background-color: red;
+    //       width: 70%;
+    //       margin: 0rem auto;
+    //       // transform-origin: right;
+    //     }
+    //   }
+    // }
   }
 }

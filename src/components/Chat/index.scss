@@ -1,152 +1,152 @@
-.chat__section {
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  z-index: $z-index-modal;
-  border-radius: 10px;
-  max-height: calc(100% - 50px) !important;
-  will-change: auto;
-  transition: 1s;
+// .chat__section {
+//   width: 40px;
+//   height: 40px;
+//   position: fixed;
+//   bottom: 10px;
+//   right: 10px;
+//   z-index: 1000000;
+//   border-radius: 10px;
+//   max-height: calc(100% - 50px) !important;
+//   will-change: auto;
+//   transition: 1s;
 
-  &.active {
-    width: 400px;
-    height: 600px;
-  }
-  .chat__box {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    z-index: inherit;
-    user-select: none;
-  }
+//   &.active {
+//     width: 400px;
+//     height: 600px;
+//   }
+//   .chat__box {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 10px;
+//     border: none;
+//     outline: none;
+//     z-index: inherit;
+//     user-select: none;
+//   }
 
-  .chat__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: $z-index-priority;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    right: 0%;
-    top: 0%;
-    color: white;
-    background-color: #3c4b50;
-    border-radius: 10px;
-    transition: 0.5s;
-    will-change: auto;
-    cursor: pointer;
-    &::before {
-      content: '🤖';
-      color: white;
-      transform-origin: bottom center;
-    }
-    &::after {
-      content: 'LOADING...';
-      position: absolute;
-      top: 55%;
-      display: block;
-      opacity: 0;
-      will-change: contents;
-    }
-    &:hover {
-      background-color: #2e383c;
-      &::before {
-        // content: '👇';
-        // animation: clickme 0.5s infinite ease-in alternate;
-        animation: tada 1s infinite;
-      }
-    }
-    &.active {
-      animation: smaller 1s 3s ease-in-out forwards;
-      &::after {
-        animation: loading 3s 0.5s linear backwards;
-      }
-      &::before {
-        animation: scalingicon 4s forwards;
-      }
-    }
-  }
-}
+//   .chat__btn {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: $z-index-priority;
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     right: 0%;
+//     top: 0%;
+//     color: white;
+//     background-color: #3c4b50;
+//     border-radius: 10px;
+//     transition: 0.5s;
+//     will-change: auto;
+//     cursor: pointer;
+//     &::before {
+//       content: '🤖';
+//       color: white;
+//       transform-origin: bottom center;
+//     }
+//     &::after {
+//       content: 'LOADING...';
+//       position: absolute;
+//       top: 55%;
+//       display: block;
+//       opacity: 0;
+//       will-change: contents;
+//     }
+//     &:hover {
+//       background-color: #2e383c;
+//       &::before {
+//         // content: '👇';
+//         // animation: clickme 0.5s infinite ease-in alternate;
+//         animation: tada 1s infinite;
+//       }
+//     }
+//     &.active {
+//       animation: smaller 1s 3s ease-in-out forwards;
+//       &::after {
+//         animation: loading 3s 0.5s linear backwards;
+//       }
+//       &::before {
+//         animation: scalingicon 4s forwards;
+//       }
+//     }
+//   }
+// }
 
-@keyframes clickme {
-  from {
-    transform: translateY(-5px);
-  }
-  to {
-    transform: translateY(5px);
-  }
-}
+// @keyframes clickme {
+//   from {
+//     transform: translateY(-5px);
+//   }
+//   to {
+//     transform: translateY(5px);
+//   }
+// }
 
-@keyframes scalingicon {
-  0% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(2);
-  }
-  90% {
-    content: '👍';
-    transform: scale(2);
-  }
-  100% {
-    content: '✖';
-    transform: scale(1);
-  }
-}
+// @keyframes scalingicon {
+//   0% {
+//     transform: scale(1);
+//   }
+//   10% {
+//     transform: scale(2);
+//   }
+//   90% {
+//     content: '👍';
+//     transform: scale(2);
+//   }
+//   100% {
+//     content: '✖';
+//     transform: scale(1);
+//   }
+// }
 
-@keyframes smaller {
-  from {
-    width: 100%;
-    height: 100%;
-  }
-  to {
-    top: 0.75%;
-    right: 1%;
-    width: 50px;
-    height: 50px;
-  }
-}
+// @keyframes smaller {
+//   from {
+//     width: 100%;
+//     height: 100%;
+//   }
+//   to {
+//     top: 0.75%;
+//     right: 1%;
+//     width: 50px;
+//     height: 50px;
+//   }
+// }
 
-@keyframes loading {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-    content: 'ACCESSING...';
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    content: 'ACCESSING...';
-    opacity: 0;
-  }
-}
+// @keyframes loading {
+//   0% {
+//     opacity: 0;
+//   }
+//   10% {
+//     opacity: 1;
+//   }
+//   20% {
+//     opacity: 0;
+//   }
+//   30% {
+//     opacity: 1;
+//   }
+//   40% {
+//     opacity: 0;
+//     content: 'ACCESSING...';
+//   }
+//   50% {
+//     opacity: 1;
+//   }
+//   60% {
+//     opacity: 0;
+//   }
+//   70% {
+//     opacity: 1;
+//   }
+//   80% {
+//     opacity: 0;
+//   }
+//   90% {
+//     opacity: 1;
+//   }
+//   100% {
+//     content: 'ACCESSING...';
+//     opacity: 0;
+//   }
+// }

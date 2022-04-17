@@ -1,9 +1,10 @@
-$z-index-lower: -1;
 $z-index-normal: 0;
-$z-index-upper: 1;
-$z-index-high: 2;
-$z-index-modal: 3;
-$z-index-priority: 4;
+$z-index-lower: $z-index-normal - 1;
+$z-index-upper: $z-index-normal + 1;
+$z-index-high: $z-index-upper + 1;
+$z-index-modal: $z-index-high + 1;
+$z-index-nav: $z-index-normal + 10;
+$z-index-priority: $z-index-nav + 1;
 
 // $width-nav: 70vw;
 
@@ -17,7 +18,13 @@ $breakpoints: (
 ) !default;
 
 :root {
-  --width-nav: 80vw;
+  --primary-color: #1598ec;
+  --secondary-color: #444;
+  --third-color: #10639c;
+
+  --width-nav: 100%;
+
+  --box-shadow: 0 5px 15px rgba($color: #000, $alpha: 0.2);
 }
 
 @import './components/Layouts/index.scss';
@@ -25,23 +32,23 @@ $breakpoints: (
 @import './components/Home/index.scss';
 @import './components/Chat/index.scss';
 
-@media screen and (min-width: 360px) {
-  :root {
-    --width-nav: 50vw;
-  }
-}
-@media screen and (min-width: 768px) {
-  :root {
-    --width-nav: 35vw;
-  }
-}
-@media screen and (min-width: 1366px) {
-  :root {
-    --width-nav: 30vw;
-  }
-}
-@media screen and (min-width: 1920px) {
-  :root {
-    --width-nav: 20vw;
-  }
-}
+// @media screen and (min-width: 360px) {
+//   :root {
+//     --width-nav: 50vw;
+//   }
+// }
+// @media screen and (min-width: 768px) {
+//   :root {
+//     --width-nav: 35vw;
+//   }
+// }
+// @media screen and (min-width: 1366px) {
+//   :root {
+//     --width-nav: 30vw;
+//   }
+// }
+// @media screen and (min-width: 1920px) {
+//   :root {
+//     --width-nav: 20vw;
+//   }
+// }

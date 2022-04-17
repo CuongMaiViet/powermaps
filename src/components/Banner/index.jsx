@@ -19,7 +19,7 @@ const Banner = () => {
         image: true,
       })
       for (let i = 1; i < 400; i++) {
-        const duration = Math.random() * 5
+        const duration = Math.random() * 3
         results[0].cells[i].style.animationDuration = 2 + duration + 's'
         results[0].cells[i].style.animationDelay = duration + 's'
       }
@@ -29,7 +29,7 @@ const Banner = () => {
       setTimeout(() => {
         bannerRef.current.classList.add('disappear')
         sessionStorage.setItem('banner', true)
-      }, 14000)
+      }, 10000)
     }, [])
   }
 

@@ -1,16 +1,15 @@
 import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import resources from '../../utils/resources'
 
 const Navigation = () => {
-  const [menu, setMenu] = useState(false)
-
+  const [img, setImg] = useState(resources.img1)
   const navRef = useRef()
 
   const navToggle = (ef) => {
     navRef.current.classList[ef]('active')
     document.querySelectorAll('section[class*=__section]').forEach((el) => {
       el.classList[ef]('active')
-      setMenu(!menu)
     })
   }
 
@@ -27,47 +26,57 @@ const Navigation = () => {
           <span></span>
           <span></span>
         </div>
+        <div className="link__navarea">
+          <NavLink
+            exact="true"
+            activeclassname="active"
+            className="nav__link"
+            to={'/'}
+            onMouseEnter={() => setImg(resources.img1)}
+          >
+            home
+          </NavLink>
+          <NavLink
+            exact="true"
+            activeclassname="active"
+            className="nav__link"
+            to={'/about'}
+            onMouseEnter={() => setImg(resources.img2)}
+          >
+            about us
+          </NavLink>
+          <NavLink
+            exact="true"
+            activeclassname="active"
+            className="nav__link"
+            to={'/services'}
+            onMouseEnter={() => setImg(resources.img3)}
+          >
+            services
+          </NavLink>
+          <NavLink
+            exact="true"
+            activeclassname="active"
+            className="nav__link"
+            to={'/products'}
+            onMouseEnter={() => setImg(resources.img4)}
+          >
+            products
+          </NavLink>
+          <NavLink
+            exact="true"
+            activeclassname="active"
+            className="nav__link"
+            to={'/contact'}
+            onMouseEnter={() => setImg(resources.img5)}
+          >
+            contact us
+          </NavLink>
+        </div>
 
-        <NavLink
-          exact="true"
-          activeclassname="active"
-          className="nav__link"
-          to={'/'}
-        >
-          home
-        </NavLink>
-        <NavLink
-          exact="true"
-          activeclassname="active"
-          className="nav__link"
-          to={'/about'}
-        >
-          about us
-        </NavLink>
-        <NavLink
-          exact="true"
-          activeclassname="active"
-          className="nav__link"
-          to={'/services'}
-        >
-          services
-        </NavLink>
-        <NavLink
-          exact="true"
-          activeclassname="active"
-          className="nav__link"
-          to={'/products'}
-        >
-          products
-        </NavLink>
-        <NavLink
-          exact="true"
-          activeclassname="active"
-          className="nav__link"
-          to={'/contact'}
-        >
-          contact us
-        </NavLink>
+        <div className="img__navarea">
+          <img src={img} alt="img" />
+        </div>
       </nav>
     </header>
   )
