@@ -1,7 +1,7 @@
 export const clientsData = [
-  [{ name: 'airbnb' }],
-  [{ name: 'amazon' }, { name: 'apple' }],
-  [{ name: 'cocacola' }, { name: 'youtube' }, { name: 'google' }],
-  [{ name: 'microsoft' }, { name: 'netflix' }],
-  [{ name: 'facebook' }],
+  [{ name: 'ford' }],
+  [{ name: 'audi' }, { name: 'mercedes' }],
+  [{ name: 'tesla' }, { name: 'bmw' }, { name: 'amg' }],
+  [{ name: 'mazda' }, { name: 'hyundai' }],
+  [{ name: 'porsche' }],
 ]

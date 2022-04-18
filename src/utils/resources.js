@@ -8,17 +8,15 @@ import contactImg from '../assets/images/img5.jpg'
 import allMakes from '../assets/images/all_makes.jpeg'
 import engine from '../assets/images/engine.jpeg'
 import audidash from '../assets/images/audidash.jpg'
-import airbnb from '../assets/images/companies/airbnb.svg'
-import amazon from '../assets/images/companies/amazon.svg'
-import apple from '../assets/images/companies/apple.svg'
-import cocacola from '../assets/images/companies/cocacola.svg'
-import disney from '../assets/images/companies/disney.svg'
-import facebook from '../assets/images/companies/facebook.svg'
-import microsoft from '../assets/images/companies/microsoft.svg'
-import netflix from '../assets/images/companies/netflix.svg'
+import bmw from '../assets/images/companies/bmw.svg'
+import audi from '../assets/images/companies/audi.svg'
+import mercedes from '../assets/images/companies/mercedes.svg'
 import tesla from '../assets/images/companies/tesla.svg'
-import youtube from '../assets/images/companies/youtube.svg'
-import google from '../assets/images/companies/google.svg'
+import ford from '../assets/images/companies/ford.svg'
+import mazda from '../assets/images/companies/mazda.svg'
+import hyundai from '../assets/images/companies/hyundai.svg'
+import porsche from '../assets/images/companies/porsche.svg'
+import amg from '../assets/images/companies/amg.svg'
 
 export default {
   video1: video1,
@@ -31,15 +29,13 @@ export default {
   img6: allMakes,
   img7: engine,
   img8: audidash,
-  airbnb: airbnb,
-  amazon: amazon,
-  apple: apple,
-  cocacola: cocacola,
-  disney: disney,
-  facebook: facebook,
-  microsoft: microsoft,
-  netflix: netflix,
+  bmw: bmw,
+  audi: audi,
+  mercedes: mercedes,
   tesla: tesla,
-  youtube: youtube,
-  google: google,
+  ford: ford,
+  mazda: mazda,
+  hyundai: hyundai,
+  porsche: porsche,
+  amg: amg,
 }
