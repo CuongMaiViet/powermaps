@@ -4,10 +4,31 @@
   position: relative;
   // background-color: #e5e5e5;
   section[class*='__section'] {
-    margin-bottom: 5rem;
+    color: #fff;
+    width: 80%;
+    margin: 0 auto 10rem;
+    h2 {
+      width: 100%;
+      text-align: center;
+      height: 80px;
+      font-size: 3rem;
+      position: relative;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      &::after {
+        content: '';
+        position: absolute;
+        border-bottom: 2px solid var(--primary-color);
+        bottom: 0;
+        left: 50%;
+        width: 50px;
+        transform: translateX(-50%);
+      }
+    }
   }
   .video__section {
-    width: 100%;
+    width: 100% !important;
     height: 100vh;
     display: block;
     overflow: hidden;
@@ -55,14 +76,15 @@
   }
 
   .statistic__section {
-    width: 70%;
-    margin: auto;
+    width: 70% !important;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-row-gap: 0.8rem;
-    padding: 1rem;
+    // padding: 1rem;
     opacity: 1;
     user-select: none;
+    overflow: hidden;
+    // margin-bottom: 10rem !important;
     .statistic__box {
       width: 90%;
       margin: auto;
@@ -74,7 +96,8 @@
       gap: 0.5rem;
       border-radius: 10px;
       font-weight: 500;
-      box-shadow: 0px 5px 5px rgba($color: #000, $alpha: 0.2);
+      // box-shadow: 0px 5px 5px rgba($color: #000, $alpha: 0.2);
+      box-shadow: var(--box-shadow);
       transition: background 0.5s;
       // cursor: url(myBall.cur), auto;
       .icon {
@@ -98,8 +121,8 @@
         text-transform: capitalize;
 
         span {
-          color: #555;
-
+          color: rgba($color: #fff, $alpha: 0.8);
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
           &:nth-child(1) {
             font-size: 1.3rem;
             display: flex;
@@ -124,6 +147,109 @@
 
         .content span:nth-child(2) {
           color: white;
+        }
+      }
+    }
+  }
+
+  .offer__section {
+    height: fit-content;
+
+    .offer__content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-gap: 0.8rem;
+      overflow: hidden;
+      .offer__card {
+        width: 100%;
+        border-radius: 5px;
+        .offer__image {
+          width: 100%;
+          overflow: hidden;
+          background-color: var(--primary-color);
+          cursor: pointer;
+          img {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .title {
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 1.3rem;
+          padding: 1.5rem 0;
+          letter-spacing: 2px;
+        }
+        .description {
+          width: 100%;
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          // color: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+
+  .client__section {
+    .client__section-title {
+      height: 100px;
+      position: relative;
+      span {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+        font-size: 1rem;
+        // color: rgba(255, 255, 255, 0.6);
+      }
+    }
+    .client__section-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+      gap: 1rem;
+      overflow: hidden;
+      .client__section-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+        border-radius: 10px;
+        background-color: transparent;
+        .client__section-item {
+          box-shadow: var(--box-shadow);
+          background-color: #fff;
+          padding: 10px 40px;
+          width: 100%;
+          height: 110px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          margin: 0.6rem;
+          img {
+            width: 90px;
+            height: 100%;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+
+        .client__section-column {
+          div:not(:first-child) {
+            display: none;
+          }
+          .client__section-item img {
+            width: clamp(80px, 40vw, 400px);
+            height: 60%;
+          }
         }
       }
     }

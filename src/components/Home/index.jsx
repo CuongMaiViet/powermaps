@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import resources from '../../utils/resources'
 import {
   faAward,
@@ -7,66 +7,71 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import VanillaTilt from 'vanilla-tilt'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import counterUp from 'counterup2'
 import ScrollIndicator from '../ScrollIndicator'
 import Typed from 'typed.js'
+import CustomHook from '../../utils/CustomHook'
+import { clientsData } from '../../utils/ClientData'
 
 const DEFAULT_OPTION = {
   strings: [
     ` PM Tuning Have Been Providing <br /> <span>The Best And Safest Tuning
     Solutions</span>  <br /> For Over 15 Years`,
+    `By developing the most thoroughly tested upgrades <br/> We have earned an enviable reputation for the best`,
+    `We create some of the most sought after upgrades <br/> and offer our services worldwide`,
+    `Call us on <span>070 8966 832</span> <br/> or email: <span>sales@powermap.vn</span>`,
   ],
   typeSpeed: 50,
-  backSpeed: 50,
+  backSpeed: 0,
   startDelay: 1000,
-  backDelay: 2000,
+  backDelay: 1000,
   loop: true,
+  loopCount: 2,
 }
 
 const Home = () => {
-  const [counter, setCounter] = useState(false)
+  const { ScrollReveal } = CustomHook()
 
-  useEffect(() => {
-    if (counter) {
+  const count = () => {
+    return () =>
       document.querySelectorAll('.number').forEach((e) => {
         counterUp(e, {
           duration: 2000,
           delay: 16,
         })
       })
+  }
+  const type = (section, string, typeSpeed) => {
+    return () => {
+      const type = new Typed(document.querySelector(`${section}-title`), {
+        strings: [string],
+        typeSpeed: typeSpeed,
+        showCursor: false,
+      })
+      return () => {
+        type.destroy()
+      }
     }
-  }, [counter])
-
-  //   useEffect(() => {
-  //     VanillaTilt.init(document.querySelectorAll('.statistic__box'), {
-  //       max: 10,
-  //       speed: 400,
-  //       scale: 1.05,
-  //       glare: true,
-  //       'max-glare': 0.8,
-  //     })
-  //   }, [])
+  }
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.statistic__section',
-        toggleActions: 'play none restart reset',
-        onEnter: () => setCounter(true),
-        onEnterBack: () => setCounter(true),
-        onLeave: () => setCounter(false),
-        onLeaveBack: () => setCounter(false),
-      },
-    })
-
-    tl.fromTo(
-      '.statistic__box',
-      { opacity: 0, yPercent: 100, duration: 0.5 },
-      { opacity: 1, yPercent: 0, duration: 0.5, stagger: 0.25 }
+    ScrollReveal('.statistic__section', '.statistic__box', 0.5, count())
+    ScrollReveal(
+      '.offer__section',
+      '.offer__card',
+      1,
+      type('.offer__section', 'what we do', 80)
+    )
+    ScrollReveal(
+      '.client__section',
+      '.client__section-item',
+      1,
+      type(
+        '.client__section',
+        `Clients <br />
+      <span>We've been working with teams around the world.</span>`,
+        50
+      )
     )
   }, [])
 
@@ -131,6 +136,80 @@ const Home = () => {
             <span className="number">100</span>
             <span>new cars</span>
           </div>
+        </div>
+      </section>
+
+      <section className="offer__section">
+        <h2 className="offer__section-title"></h2>
+
+        <div className="offer__content">
+          <div className="offer__card">
+            <div className="offer__image">
+              <img src={resources.img3} alt="" />
+            </div>
+            <h3 className="title">upgrades</h3>
+            <p className="description">
+              We have have thoroughly developed upgrades for many cars, the most
+              popular is our ECU software recalibrations, which will completely
+              transform your car. We also offer additional modifications to
+              further enhance the performance and style of your vehicle.
+            </p>
+          </div>
+
+          <div className="offer__card">
+            <div className="offer__image">
+              <img src={resources.img7} alt="" />
+            </div>
+            <h3 className="title">our service</h3>
+            <p className="description">
+              Our fully trained and highly experienced engineers can visit you
+              anywhere, at your convenience, your car will be fully tested
+              before and after tuning, with the latest genuine, professional
+              tools.
+            </p>
+          </div>
+
+          <div className="offer__card">
+            <div className="offer__image">
+              <img src={resources.img8} alt="" />
+            </div>
+            <h3 className="title">our products</h3>
+            <p className="description">
+              We also supply performance and cosmetic upgrades for many makes
+              and models. Additionally, we have some of the very latest
+              diagnostic equipment, specialising in European manufacturers like
+              Mercedes, BMW, Audi and Porsche.
+            </p>
+          </div>
+
+          <div className="offer__card">
+            <div className="offer__image">
+              <img src={resources.img6} alt="" />
+            </div>
+            <h3 className="title">all makes</h3>
+            <p className="description">
+              We are able to upgrade the performance of cars from many
+              manufacturers, such as Ferrari, Porsche, BMW, Audi, VW, Jeep,
+              Ford, Toyota, Nissan and many more. Our service is available for
+              most petrol and turbo diesel engines.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="client__section">
+        <h2 className="client__section-title"></h2>
+
+        <div className="client__section-row">
+          {clientsData.map((clients, index) => (
+            <div className="client__section-column" key={index}>
+              {clients.map((c, i) => (
+                <div className="client__section-item" key={i}>
+                  <img src={resources[c.name]} alt={c.name} />
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
     </div>
